@@ -42,4 +42,5 @@ def students_generate(request):
         x.append(user)
     return render(request, "students_generate/student.html", {"students": x})
 
-#quantity = int_quantity if int_quantity > 0 else 100
+
+# quantity = int_quantity if int_quantity > 0 else 100
