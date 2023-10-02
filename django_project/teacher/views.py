@@ -11,9 +11,8 @@ def view_teacher(request):
     cursor.execute("SELECT * FROM teacher_teacher")
     results = cursor.fetchall()
 
-
     teacher_list = []
     for row in results:
         row = Teacher(row[0], row[1], row[2], row[3], row[4])
         teacher_list.append(row)
-    return render(request, 'view_teacher/teacher.html', {'teachers': teacher_list})
+    return render(request, "view_teacher/teacher.html", {"teachers": teacher_list})
