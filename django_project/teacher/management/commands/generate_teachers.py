@@ -14,7 +14,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         for i in range(int(options["number"])):
-            t = Teacher(
+            t = Teacher.objects.create(
                 name=fake.first_name(),
                 surname=fake.last_name(),
                 birth_data=fake.date(),
@@ -28,7 +28,6 @@ class Command(BaseCommand):
                     )
                 ),
             )
-            t.save()
             self.stdout.write(
                 self.style.SUCCESS('Successfully added teacher "%s"' % t.name)
             )

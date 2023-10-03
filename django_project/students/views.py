@@ -26,6 +26,7 @@ def students_generate(request):
     count = queryprms.get("count", "1")
     if not count.isdigit() or (int(count) < 0 or int(count) > 100):
         return HttpResponse("Введіть додатнє число не більше 100")
+
     fake = Faker()
     c = int(count)
     x = []
@@ -41,6 +42,3 @@ def students_generate(request):
         }
         x.append(user)
     return render(request, "students_generate/student.html", {"students": x})
-
-
-# quantity = int_quantity if int_quantity > 0 else 100
