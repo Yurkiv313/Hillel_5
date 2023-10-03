@@ -42,4 +42,3 @@ def students_generate(request):
         }
         x.append(user)
     return render(request, "students_generate/student.html", {"students": x})
-
